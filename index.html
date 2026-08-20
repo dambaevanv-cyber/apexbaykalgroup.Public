@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ApexBaykalGroup — Ипотечное страхование</title>
+<meta name="description" content="Подбор предложений по ипотечному страхованию от нескольких банков и страховых компаний. Вершина вашей защиты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12294D;
+    --royal:#1E4E8C;
+    --sky:#4FA3D1;
+    --ice:#E4F1F8;
+    --paper:#FBFDFE;
+    --mist:#5E7391;
+    --line:#D3E4EE;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,.brand-word{
+    font-family:'Manrope', sans-serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+
+  a{ color:inherit; }
+
+  /* ---------- Header ---------- */
+  header{
+    padding:28px 24px 0;
+    display:flex;
+    justify-content:center;
+  }
+
+  .logo-wrap{
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+
+  .logo-wrap img{
+    width:46px;
+    height:46px;
+    object-fit:contain;
+  }
+
+  .logo-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+  }
+
+  .logo-text .brand-word{
+    font-size:19px;
+    color:var(--ink);
+  }
+
+  .logo-text .brand-tag{
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--mist);
+    margin-top:3px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width:720px;
+    margin:0 auto;
+    padding:56px 24px 20px;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:clamp(28px,5.2vw,42px);
+    line-height:1.15;
+    color:var(--ink);
+  }
+
+  .hero h1 span{
+    color:var(--royal);
+  }
+
+  .hero p{
+    max-width:520px;
+    margin:18px auto 0;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--mist);
+  }
+
+  .hero-badges{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:26px;
+  }
+
+  .badge{
+    font-size:13px;
+    color:var(--royal);
+    background:var(--ice);
+    border:1px solid var(--line);
+    padding:7px 14px;
+    border-radius:100px;
+    font-weight:500;
+  }
+
+  /* ---------- Mountain divider (signature element) ---------- */
+  .ridge{
+    display:block;
+    width:100%;
+    height:auto;
+    margin-top:44px;
+  }
+
+  /* ---------- Widget section ---------- */
+  .widget-section{
+    background:linear-gradient(180deg, var(--ice) 0%, var(--paper) 100%);
+    padding:0 20px 64px;
+    margin-top:-2px;
+  }
+
+  .widget-card{
+    max-width:640px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:32px 24px 24px;
+    box-shadow:0 24px 60px -32px rgba(18,41,77,0.35);
+  }
+
+  .widget-card h2{
+    font-size:20px;
+    text-align:center;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+
+  .widget-card .sub{
+    text-align:center;
+    font-size:14px;
+    color:var(--mist);
+    margin-bottom:22px;
+  }
+
+  /* Widget is loaded in a fixed-width iframe so its internal responsive
+     layout always uses the compact/mobile view, regardless of the
+     visitor's actual browser window width. */
+  .widget-frame{
+    width:100%;
+    max-width:440px;
+    margin:0 auto;
+  }
+
+  .widget-frame iframe{
+    width:100%;
+    border:0;
+    display:block;
+    height:520px; /* fallback before real content height is measured */
+  }
+
+  /* ---------- Trust strip ---------- */
+  .trust{
+    max-width:640px;
+    margin:28px auto 0;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+    text-align:center;
+  }
+
+  .trust div{ flex:1; min-width:150px; }
+
+  .trust .num{
+    font-family:'Manrope', sans-serif;
+    font-weight:700;
+    font-size:20px;
+    color:var(--royal);
+  }
+
+  .trust .label{
+    font-size:12.5px;
+    color:var(--mist);
+    margin-top:2px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#B9C9DE;
+    padding:34px 24px;
+    text-align:center;
+    font-size:13px;
+  }
+
+  footer .brand-word{
+    color:#fff;
+    font-size:16px;
+    margin-bottom:6px;
+  }
+
+  footer p{
+    margin:4px 0;
+    line-height:1.6;
+  }
+
+  footer a{
+    color:#fff;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  /* ---------- Reveal on load ---------- */
+  .hero, .widget-card{
+    opacity:0;
+    transform:translateY(10px);
+    animation:rise 0.7s ease-out forwards;
+  }
+  .widget-card{ animation-delay:0.15s; }
+
+  @keyframes rise{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .hero, .widget-card{ animation:none; opacity:1; transform:none; }
+  }
+
+  @media (max-width:480px){
+    .widget-card{ padding:26px 16px 18px; border-radius:16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-wrap">
+    <img src="logo.jpg" alt="ApexBaykalGroup">
+    <div class="logo-text">
+      <span class="brand-word">ApexBaykalGroup</span>
+      <span class="brand-tag">Вершина вашей защиты</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Ипотечное страхование <span>за пару минут</span></h1>
+  <p>Заполните форму — сервис подберёт и покажет предложения нескольких страховых компаний по условиям вашей ипотеки. Оформление онлайн, без визита в офис.</p>
+  <div class="hero-badges">
+    <span class="badge">Несколько страховых компаний</span>
+    <span class="badge">Расчёт онлайн</span>
+    <span class="badge">Без визита в офис</span>
+  </div>
+</section>
+
+<!-- Signature element: layered mountain ridge, echoing the ApexBaykalGroup logo -->
+<svg class="ridge" viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 140 L220 60 L340 100 L520 20 L680 90 L800 50 L980 120 L1120 55 L1280 100 L1440 70 L1440 160 L0 160 Z" fill="#BFE0F0"/>
+  <path d="M0 150 L180 90 L360 130 L540 60 L720 120 L880 80 L1040 140 L1220 85 L1440 130 L1440 160 L0 160 Z" fill="#4FA3D1" opacity="0.85"/>
+  <path d="M0 160 L160 120 L300 150 L480 100 L640 150 L820 110 L980 155 L1180 115 L1350 150 L1440 140 L1440 160 L0 160 Z" fill="#1E4E8C"/>
+</svg>
+
+<section class="widget-section">
+  <div class="widget-card">
+    <h2>Рассчитать страхование ипотеки</h2>
+    <div class="sub">Укажите данные — предложения банков появятся автоматически</div>
+
+    <!-- === Виджет polis.online (в iframe, чтобы не обрезались названия страховых) === -->
+    <div class="widget-frame">
+      <iframe id="mortgageFrame" src="widget.html" title="Расчёт ипотечного страхования" loading="lazy"></iframe>
+    </div>
+    <!-- === конец виджета === -->
+  </div>
+
+  <div class="trust">
+    <div>
+      <div class="num">ФСО</div>
+      <div class="label">Работаем по федеральным стандартам оценки</div>
+    </div>
+    <div>
+      <div class="num">РБ</div>
+      <div class="label">Республика Бурятия и Онохой</div>
+    </div>
+    <div>
+      <div class="num">Онлайн</div>
+      <div class="label">Заявка без визита в офис</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand-word">ApexBaykalGroup</div>
+  <p>Вершина вашей защиты</p>
+  <p><!-- добавьте телефон/почту/ссылку на Instagram, например: --> Instagram: <a href="#" target="_blank" rel="noopener">@apexbaykalgroup</a></p>
+  <p>© <span id="year"></span> ApexBaykalGroup</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Автоподстройка высоты iframe с виджетом под его реальное содержимое
+  (function(){
+    var frame = document.getElementById('mortgageFrame');
+    if(!frame) return;
+
+    function resizeFrame(){
+      try{
+        var doc = frame.contentWindow.document;
+        var h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+        if(h > 0) frame.style.height = h + 'px';
+      }catch(e){ /* игнорируем, если доступ ограничен браузером */ }
+    }
+
+    frame.addEventListener('load', function(){
+      resizeFrame();
+      // Содержимое виджета подгружается асинхронно, поэтому
+      // подстраиваем высоту периодически в течение ~20 секунд.
+      var tries = 0;
+      var iv = setInterval(function(){
+        resizeFrame();
+        tries++;
+        if(tries > 40) clearInterval(iv);
+      }, 500);
+    });
+  })();
+</script>
+
+</body>
+</html>
